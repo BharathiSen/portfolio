@@ -77,12 +77,8 @@ body {
     transition: var(--transition);
 }
 
-.logo a span {
-    color: var(--primary-color);
-}
-
 .logo a:hover {
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .nav-menu {
@@ -277,6 +273,15 @@ body {
     justify-content: center;
     box-shadow: var(--shadow-lg);
     animation: float 3s ease-in-out infinite;
+    overflow: hidden;
+    border: 8px solid var(--white);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .profile-circle i {

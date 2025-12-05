@@ -133,15 +133,11 @@ const downloadResumeBtn = document.getElementById('downloadResume');
 downloadResumeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     
-    // Replace with actual resume file path
-    // For now, show an alert
-    alert('Resume download functionality will be implemented once you add your resume file to the assets folder.');
-    
-    // Uncomment and modify the following lines when you have a resume file:
-    // const link = document.createElement('a');
-    // link.href = 'assets/Bharathi_S_Resume.pdf';
-    // link.download = 'Bharathi_S_Resume.pdf';
-    // link.click();
+    // Download resume
+    const link = document.createElement('a');
+    link.href = 'assets/Bharathi_S_Resume.pdf';
+    link.download = 'Bharathi_S_Resume.pdf';
+    link.click();
 });
 
 // ===============================
