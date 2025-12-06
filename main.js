@@ -126,14 +126,9 @@ if (contactForm) {
             return;
         }
 
-        // Check if EmailJS is configured
+        // EmailJS configuration
         const serviceId = 'service_aj704he';
         const templateId = 'template_hazqxwf';
-        
-        if (serviceId === 'service_aj704he' || templateId === 'template_hazqxwf') {
-            alert('⚠️ EmailJS is not configured yet.\n\nFor now, please email me directly at:\nbharathi.ece2023@citchennai.net\n\nYour message:\n' + message);
-            return;
-        }
 
         // Disable submit button to prevent multiple submissions
         const submitBtn = contactForm.querySelector('button[type="submit"]');
