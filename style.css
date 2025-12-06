@@ -2,20 +2,23 @@
    CSS Variables & Reset
    ====================== */
 :root {
-    --primary-color: #6C63FF;
-    --primary-dark: #5752d8;
-    --background: #F8F9FC;
-    --text-primary: #1F1F1F;
-    --text-secondary: #6B7280;
+    --primary-color: #8B7FFF;
+    --primary-dark: #6C63FF;
+    --background: #0A0A0F;
+    --background-alt: #1A1A2E;
+    --text-primary: #E0E0E0;
+    --text-secondary: #A0A0B0;
     --white: #FFFFFF;
-    --light-gray: #F3F4F6;
-    --border-color: #E5E7EB;
-    --shadow-sm: 0 2px 8px rgba(108, 99, 255, 0.08);
-    --shadow-md: 0 4px 16px rgba(108, 99, 255, 0.12);
-    --shadow-lg: 0 8px 32px rgba(108, 99, 255, 0.16);
+    --card-bg: #16161F;
+    --card-bg-alt: #1E1E2E;
+    --light-gray: #2A2A3E;
+    --border-color: #2A2A3E;
+    --shadow-sm: 0 2px 8px rgba(138, 127, 255, 0.15);
+    --shadow-md: 0 4px 16px rgba(138, 127, 255, 0.2);
+    --shadow-lg: 0 8px 32px rgba(138, 127, 255, 0.25);
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --gradient-accent: linear-gradient(135deg, #6C63FF 0%, #9D5CFF 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16161F 100%);
+    --gradient-accent: linear-gradient(135deg, #8B7FFF 0%, #B47FFF 100%);
     --transition: all 0.3s ease;
 }
 
@@ -51,9 +54,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     transition: var(--transition);
 }
@@ -78,7 +82,7 @@ body {
 }
 
 .logo a:hover {
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .nav-menu {
@@ -152,7 +156,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 100px 0 60px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%);
+    background: var(--background);
     position: relative;
     overflow: hidden;
 }
@@ -163,10 +167,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+    background: linear-gradient(-45deg, #667eea, #764ba2, #8B7FFF, #6C63FF);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: 0;
 }
 
@@ -410,7 +414,7 @@ body {
    About Section
    ====================== */
 .about-section {
-    background: var(--white);
+    background: var(--background-alt);
 }
 
 .about-content {
@@ -525,11 +529,12 @@ body {
 }
 
 .timeline-content {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .timeline-content:hover {
@@ -590,7 +595,7 @@ body {
    Projects Section
    ====================== */
 .projects-section {
-    background: var(--white);
+    background: var(--background-alt);
 }
 
 .projects-grid {
@@ -600,12 +605,12 @@ body {
 }
 
 .project-card {
-    background: var(--white);
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -772,12 +777,13 @@ body {
 }
 
 .skill-category {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 .skill-category:hover {
@@ -829,7 +835,7 @@ body {
    Certifications Section
    ====================== */
 .certifications-section {
-    background: var(--white);
+    background: var(--background-alt);
 }
 
 .certifications-grid {
@@ -839,7 +845,7 @@ body {
 }
 
 .cert-card {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--shadow-sm);
@@ -893,12 +899,13 @@ body {
 .research-item {
     display: flex;
     gap: 2rem;
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .research-item:hover {
@@ -931,7 +938,7 @@ body {
    Achievements Section
    ====================== */
 .achievements-section {
-    background: var(--white);
+    background: var(--background-alt);
 }
 
 .achievements-grid {
@@ -941,13 +948,13 @@ body {
 }
 
 .achievement-card {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--shadow-sm);
     text-align: center;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--border-color);
 }
 
 .achievement-card:hover {
@@ -1044,10 +1051,11 @@ body {
 }
 
 .contact-form-wrapper {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 .contact-form {
@@ -1075,7 +1083,8 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: var(--transition);
-    background: var(--white);
+    background: var(--card-bg-alt);
+    color: var(--text-primary);
 }
 
 .form-group input:focus,
@@ -1094,10 +1103,11 @@ body {
    Footer
    ====================== */
 .footer {
-    background: var(--text-primary);
-    color: var(--white);
+    background: var(--card-bg);
+    color: var(--text-primary);
     padding: 2rem 0;
     text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer .container {
@@ -1121,17 +1131,18 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--light-gray);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--text-primary);
     font-size: 1.1rem;
     transition: var(--transition);
 }
 
 .footer-social a:hover {
     background: var(--primary-color);
+    color: var(--white);
     transform: translateY(-3px);
 }
 
