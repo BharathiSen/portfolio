@@ -195,8 +195,7 @@ if (scrollIndicator) {
     });
 }
 
-// ===============================
-// Typing Effect for Hero Title (Optional Enhancement)
+
 // ===============================
 // Typing Animation Effect
 // ===============================
