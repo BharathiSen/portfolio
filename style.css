@@ -270,6 +270,21 @@ body {
     min-height: 50px;
 }
 
+.hero-certification {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-certification i {
+    font-size: 1.1rem;
+}
+
 .hero-contact {
     display: flex;
     flex-direction: column;

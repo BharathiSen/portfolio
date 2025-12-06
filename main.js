@@ -227,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // After name is typed, type the subtitle
             if (typedSubtitle) {
                 setTimeout(() => {
-                    typeWriter(typedSubtitle, 'Cloud & ML Engineer', 50);
+                    typeWriter(typedSubtitle, 'Google Certified Cloud Digital Leader | Cloud & ML Engineer', 50);
                 }, 500);
             }
         });
