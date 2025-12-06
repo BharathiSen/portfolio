@@ -89,41 +89,86 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ===============================
-// Contact Form Handler
-// ===============================
-const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Basic validation
-    if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-
-    // Simulate form submission (replace with actual backend integration)
-    console.log('Form submitted:', { name, email, message });
+// Initialize EmailJS with your Public Key
+(function() {
+    const publicKey = 'c4CWvKTPyNpKTRF9C';
     
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
-});
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(publicKey);
+    }
+})();
+
+// ===============================
+// Contact Form Handler with EmailJS
+// ===============================
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Basic validation
+        if (!name || !email || !message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Check if EmailJS is configured
+        const serviceId = 'service_aj704he';
+        const templateId = 'template_hazqxwf';
+        
+        if (serviceId === 'service_aj704he' || templateId === 'template_hazqxwf') {
+            alert('⚠️ EmailJS is not configured yet.\n\nFor now, please email me directly at:\nbharathi.ece2023@citchennai.net\n\nYour message:\n' + message);
+            return;
+        }
+
+        // Disable submit button to prevent multiple submissions
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        // EmailJS template parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_name: 'Bharathi S',
+            reply_to: email,
+            title: 'New Portfolio Contact Form Submission'
+        };
+
+        // Send email using EmailJS
+        emailjs.send(serviceId, templateId, templateParams)
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        })
+        .catch((error) => {
+            console.error('FAILED...', error);
+            alert('Oops! Something went wrong.\n\nPlease email me directly at:\nbharathi.ece2023@citchennai.net');
+        })
+        .finally(() => {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
+    });
+}
 
 // ===============================
 // Download Resume Handler
@@ -188,7 +233,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // After name is typed, type the subtitle
             if (typedSubtitle) {
                 setTimeout(() => {
-                    typeWriter(typedSubtitle, 'Cloud & ML Engineer | DevOps | Serverless Architect | Data Analytics', 50);
+                    typeWriter(typedSubtitle, 'Cloud & ML Engineer', 50);
                 }, 500);
             }
         });
@@ -239,6 +284,6 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 // ===============================
 // Console Welcome Message
 // ===============================
-console.log('%c👋 Welcome to Bharathi\'s Portfolio!', 'color: #6C63FF; font-size: 20px; font-weight: bold;');
+console.log('%c Welcome to Bharathi\'s Portfolio!', 'color: #6C63FF; font-size: 20px; font-weight: bold;');
 console.log('%cFeel free to explore the code!', 'color: #6B7280; font-size: 14px;');
 console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #6C63FF; font-size: 12px;');
