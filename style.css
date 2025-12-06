@@ -713,6 +713,13 @@ body {
     font-size: 0.85rem;
     color: var(--primary-color);
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.project-tags span i {
+    font-size: 0.9rem;
 }
 
 .project-links {
@@ -824,6 +831,18 @@ body {
     font-size: 0.9rem;
     color: var(--text-primary);
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-tags span i {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.skill-tags span:hover i {
+    color: var(--white);
 }
 
 .skill-tags span:hover {
