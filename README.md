@@ -62,7 +62,7 @@ Bharathi-portfolio/
 1. Push the code to your GitHub repository
 2. Go to repository Settings → Pages
 3. Select the main branch as the source
-4. Your site will be live at `https://bharathis28.github.io/Bharathi-portfolio/`
+4. Your site will be live at `https://BharathiSen.github.io/portfolio/`
 
 ### Adding Your Resume
 
@@ -146,7 +146,7 @@ This project is open source and available for personal use.
 **Bharathi S**
 - Email: bharathi.ece2023@citchennai.net
 - LinkedIn: [bharathisenthilkumar28](https://www.linkedin.com/in/bharathisenthilkumar28)
-- GitHub: [bharathiS28](https://github.com/bharathiS28)
+- GitHub: [BharathiSen](https://github.com/BharathiSen)
 
 ---
 
