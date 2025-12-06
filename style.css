@@ -1247,32 +1247,80 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* ---- GLOBAL MOBILE FIXES ---- */
-    .section {
-        padding: 40px 0;
+    /* ===== MOBILE-ONLY: COMPACT MULTI-COLUMN LAYOUT ===== */
+    
+    /* Global mobile settings */
+    html, body {
+        overflow-x: hidden;
     }
     
-    .section-content {
-        margin-top: 1.5rem;
+    .section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .section .container {
+        width: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 10px;
     }
     
-    /* ---- NAVIGATION ---- */
+    /* Compact typography */
+    h1 {
+        font-size: 1.3rem;
+        line-height: 1.1;
+        margin-bottom: 0.2rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        line-height: 1.1;
+        margin-bottom: 0.3rem;
+    }
+    
+    h3 {
+        font-size: 0.85rem;
+        line-height: 1.1;
+        margin-bottom: 0.2rem;
+    }
+    
+    p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+    }
+    
+    /* ===== NAVIGATION ===== */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .logo a {
+        font-size: 1.1rem;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 50px;
         flex-direction: column;
         background: var(--card-bg);
         width: 100%;
         text-align: center;
         transition: var(--transition);
         box-shadow: var(--shadow-md);
-        padding: 2rem 0;
-        gap: 1rem;
+        padding: 0.8rem 0;
+        gap: 0.5rem;
         border-bottom: 1px solid var(--border-color);
     }
     
@@ -1280,385 +1328,519 @@ body {
         left: 0;
     }
     
-    .hamburger {
-        display: flex;
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
     }
     
-    /* ---- HERO SECTION ---- */
+    .hamburger {
+        display: flex;
+        width: 22px;
+        height: 22px;
+    }
+    
+    .hamburger span {
+        height: 2px;
+    }
+    
+    /* ===== HERO SECTION ===== */
     .hero {
-        min-height: auto;
-        padding: 100px 0 50px;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+        padding: 55px 0 10px;
     }
     
     .hero-content {
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
     }
     
-    .hero-title {
-        font-size: 2rem;
-        min-height: 55px;
-        line-height: 1.2;
-        margin-bottom: 0.8rem;
+    .hero-text {
+        order: 2;
     }
     
-    .hero-subtitle {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
+    .hero-image {
+        order: 1;
     }
     
     .greeting {
-        font-size: 1rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.15rem;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+        min-height: 35px;
+        margin-bottom: 0.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.65rem;
+        line-height: 1.1;
         margin-bottom: 0.4rem;
     }
     
     .hero-contact {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
+        font-size: 0.65rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-contact p {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.2rem;
     }
     
     .social-links {
-        gap: 0.8rem;
-        margin-bottom: 1.2rem;
+        gap: 0.4rem;
+        margin-bottom: 0.5rem;
     }
     
     .social-links a {
-        width: 42px;
-        height: 42px;
-        font-size: 1.1rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
     }
     
     .btn-primary {
-        font-size: 0.85rem;
-        padding: 0.75rem 1.4rem;
+        font-size: 0.7rem;
+        padding: 0.5rem 0.9rem;
     }
     
     .profile-circle {
-        width: 220px;
-        height: 220px;
+        width: 110px;
+        height: 110px;
+        margin: 0 auto;
     }
     
-    /* ---- SECTION TITLES ---- */
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.3;
+    .profile-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
-    /* ---- ABOUT SECTION ---- */
+    /* ===== ABOUT SECTION ===== */
+    .about-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .about-card {
-        padding: 1.8rem;
+        padding: 0.8rem;
     }
     
     .about-icon {
-        font-size: 2.2rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
     }
     
     .about-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.7rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.25rem;
     }
     
     .about-card h4 {
-        font-size: 1.05rem;
-        margin-bottom: 0.4rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
     }
     
     .about-card p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 0.25rem;
     }
     
-    /* ---- EXPERIENCE SECTION ---- */
-    .timeline-item {
-        padding-left: 3.5rem;
-        margin-bottom: 2rem;
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    /* ===== EXPERIENCE SECTION - 2 COLUMNS ===== */
+    .experience-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .timeline {
+        padding: 0.3rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
     }
     
     .timeline::before {
-        left: 10px;
-        width: 2px;
+        display: none; /* Hide timeline line on mobile */
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 0;
     }
     
     .timeline-icon {
-        left: -0.7rem;
-        width: 38px;
-        height: 38px;
-        font-size: 0.95rem;
+        position: static;
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
     }
     
     .timeline-content {
-        padding: 1.5rem;
+        padding: 0.7rem;
     }
     
     .timeline-content h3 {
-        font-size: 1.15rem;
-        margin-bottom: 0.4rem;
-    }
-    
-    .timeline-company {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
     }
     
     .timeline-date {
-        font-size: 0.8rem;
-        padding: 0.35rem 0.7rem;
+        font-size: 0.6rem;
+        padding: 0.15rem 0.4rem;
     }
     
-    .timeline-description {
-        font-size: 0.9rem;
-        line-height: 1.6;
+    .timeline-content h4 {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
     }
     
-    /* ---- PROJECTS SECTION ---- */
+    .timeline-content p,
+    .timeline-content ul li {
+        font-size: 0.65rem;
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        overflow: hidden;
+    }
+    
+    .timeline-content ul {
+        margin-bottom: 0.3rem;
+    }
+    
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    /* ===== PROJECTS SECTION - 2 COLUMNS ===== */
+    .projects-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
     }
     
     .project-card {
-        padding: 1.5rem;
+        padding: 0.7rem;
     }
     
     .project-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
     }
     
     .project-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.4rem;
-        line-height: 1.4;
+        font-size: 0.75rem;
+        margin-bottom: 0.2rem;
     }
     
     .project-date {
-        font-size: 0.8rem;
-        margin-bottom: 0.7rem;
+        font-size: 0.6rem;
+        margin-bottom: 0.3rem;
     }
     
     .project-description {
-        font-size: 0.88rem;
-        line-height: 1.6;
-        margin-bottom: 0.8rem;
+        font-size: 0.65rem;
+        line-height: 1.2;
+        margin-bottom: 0.4rem;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        line-clamp: 2;
         overflow: hidden;
     }
     
     .project-highlights {
-        margin-bottom: 1rem;
-    }
-    
-    .project-highlights li {
-        font-size: 0.85rem;
-        margin-bottom: 0.4rem;
-        line-height: 1.5;
+        display: none; /* Hidden to save space */
     }
     
     .project-tags {
-        gap: 0.4rem;
+        gap: 0.25rem;
+        margin-bottom: 0.4rem;
+        flex-wrap: wrap;
     }
     
     .project-tags span {
-        font-size: 0.75rem;
-        padding: 0.35rem 0.65rem;
+        font-size: 0.55rem;
+        padding: 0.2rem 0.35rem;
     }
     
     .project-tags span i {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
+    }
+    
+    .project-links {
+        gap: 0.4rem;
+        flex-direction: column;
     }
     
     .project-btn {
-        font-size: 0.8rem;
-        padding: 0.6rem 1.1rem;
+        font-size: 0.6rem;
+        padding: 0.35rem 0.6rem;
+        width: 100%;
+        justify-content: center;
     }
     
-    /* ---- SKILLS SECTION ---- */
+    /* ===== SKILLS SECTION - 3 COLUMNS ===== */
+    .skills-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1.3rem;
-    }
-    
-    .skill-category {
-        padding: 1.5rem;
-    }
-    
-    .skill-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
-    
-    .skill-category h3 {
-        font-size: 1.15rem;
-        margin-bottom: 1rem;
-    }
-    
-    .skill-tags {
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
     
-    .skill-tags span {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+    .skill-category {
+        padding: 0.6rem;
     }
     
-    .skill-tags span i {
-        font-size: 0.9rem;
-    }
-    
-    /* ---- CERTIFICATIONS SECTION ---- */
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: 1.3rem;
-    }
-    
-    .cert-card {
-        padding: 1.5rem;
-    }
-    
-    .cert-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
-    
-    .cert-card h3 {
+    .skill-icon {
+        width: 32px;
+        height: 32px;
         font-size: 1rem;
         margin-bottom: 0.4rem;
     }
     
-    .cert-card p {
-        font-size: 0.85rem;
+    .skill-category h3 {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
     }
     
-    /* ---- RESEARCH SECTION ---- */
+    .skill-tags {
+        gap: 0.25rem;
+        flex-wrap: wrap;
+    }
+    
+    .skill-tags span {
+        font-size: 0.55rem;
+        padding: 0.25rem 0.45rem;
+    }
+    
+    .skill-tags span i {
+        font-size: 0.6rem;
+    }
+    
+    /* ===== CERTIFICATIONS SECTION - 3 COLUMNS ===== */
+    .certifications-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .cert-card {
+        padding: 0.6rem;
+    }
+    
+    .cert-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .cert-card h3 {
+        font-size: 0.7rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .cert-card p {
+        font-size: 0.6rem;
+        line-height: 1.2;
+    }
+    
+    /* ===== RESEARCH SECTION - 2 COLUMNS ===== */
+    .research-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .research-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+    
     .research-item {
         flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.5rem;
-        margin-bottom: 1.3rem;
+        gap: 0.3rem;
+        padding: 0.7rem;
+        margin-bottom: 0;
     }
     
     .research-number {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
     
     .research-content h3 {
-        font-size: 1.05rem;
-        margin-bottom: 0.7rem;
-        line-height: 1.4;
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
     }
     
     .research-content p {
-        font-size: 0.88rem;
-        line-height: 1.6;
+        font-size: 0.65rem;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        overflow: hidden;
     }
     
-    /* ---- ACHIEVEMENTS SECTION ---- */
+    /* ===== ACHIEVEMENTS SECTION - 3 COLUMNS ===== */
+    .achievements-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .achievements-grid {
-        grid-template-columns: 1fr;
-        gap: 1.3rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
     
     .achievement-card {
-        padding: 1.5rem;
+        padding: 0.6rem;
     }
     
     .achievement-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
     }
     
     .achievement-card h3 {
-        font-size: 0.95rem;
-        line-height: 1.5;
+        font-size: 0.65rem;
+        line-height: 1.2;
     }
     
-    /* ---- CONTACT SECTION ---- */
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .contact-wrapper {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 0.8rem;
     }
     
     .contact-info h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.7rem;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
     }
     
     .contact-info > p {
-        font-size: 0.9rem;
-        margin-bottom: 1.3rem;
-        line-height: 1.6;
+        font-size: 0.65rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.2;
     }
     
     .contact-details {
-        gap: 1.2rem;
+        gap: 0.5rem;
     }
     
     .contact-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 1.05rem;
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
     }
     
     .contact-item h4 {
-        font-size: 0.95rem;
-        margin-bottom: 0.2rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.1rem;
     }
     
     .contact-item p,
     .contact-item a {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
     
     .contact-form-wrapper {
-        padding: 1.8rem;
+        padding: 0.8rem;
+    }
+    
+    .contact-form {
+        gap: 0.6rem;
     }
     
     .form-group {
-        gap: 0.4rem;
+        gap: 0.2rem;
+        margin-bottom: 0;
     }
     
     .form-group label {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .form-group input,
     .form-group textarea {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
     }
     
     .form-group textarea {
-        min-height: 100px;
+        min-height: 60px;
+        max-height: 60px;
     }
     
-    /* ---- FOOTER ---- */
+    /* ===== FOOTER ===== */
     .footer {
-        padding: 1.5rem 0;
+        padding: 0.8rem 0;
+        max-height: 15vh;
     }
     
     .footer p {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
+    }
+    
+    .footer-social {
+        gap: 0.5rem;
     }
     
     .footer-social a {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+    
+    .footer .container {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
