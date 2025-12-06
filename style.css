@@ -434,61 +434,71 @@ body {
 
 .about-content {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    align-items: stretch;
 }
 
 .about-card {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
     color: var(--white);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .about-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
 .about-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
     font-weight: 500;
 }
 
 .about-card .institution {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.9;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .about-card .duration {
     opacity: 0.8;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
 }
 
 .about-card .cgpa {
-    font-size: 1.3rem;
-    margin-top: 1rem;
+    font-size: 1.15rem;
+    margin-top: 0.8rem;
 }
 
 .about-description {
-    background: var(--light-gray);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
-    border-left: 4px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-description p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
-    line-height: 1.8;
+    line-height: 1.7;
+    font-size: 0.95rem;
 }
 
 .about-description p:last-child {
