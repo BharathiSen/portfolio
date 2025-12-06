@@ -158,7 +158,9 @@ if (scrollIndicator) {
 // ===============================
 // Typing Effect for Hero Title (Optional Enhancement)
 // ===============================
-function typeWriter(element, text, speed = 100) {
+// Typing Animation Effect
+// ===============================
+function typeWriter(element, text, speed = 100, callback) {
     let i = 0;
     element.innerHTML = '';
     
@@ -167,18 +169,31 @@ function typeWriter(element, text, speed = 100) {
             element.innerHTML += text.charAt(i);
             i++;
             setTimeout(type, speed);
+        } else if (callback) {
+            callback();
         }
     }
     
     type();
 }
 
-// Uncomment to enable typing effect
-// const heroTitle = document.querySelector('.hero-title');
-// if (heroTitle) {
-//     const originalText = heroTitle.textContent;
-//     typeWriter(heroTitle, originalText, 100);
-// }
+// Initialize typing animation on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const typedText = document.getElementById('typedText');
+    const typedSubtitle = document.getElementById('typedSubtitle');
+    
+    if (typedText) {
+        // Type the name first
+        typeWriter(typedText, 'BHARATHI S', 150, () => {
+            // After name is typed, type the subtitle
+            if (typedSubtitle) {
+                setTimeout(() => {
+                    typeWriter(typedSubtitle, 'Cloud & ML Engineer | DevOps | Serverless Architect | Data Analytics', 50);
+                }, 500);
+            }
+        });
+    }
+});
 
 // ===============================
 // Add Current Year to Footer
