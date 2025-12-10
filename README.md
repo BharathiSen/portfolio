@@ -3,12 +3,6 @@
 Modern, clean, and responsive single-page portfolio website.
 
 ## 🚀 Features
-
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Smooth Animations** - AOS (Animate On Scroll) library for elegant scroll animations
-- **Clean UI** - Modern design with pastel gradients and soft shadows
-- **Interactive Navigation** - Sticky navbar with active section highlighting
-- **Contact Form** - Functional contact form with validation
 - **Professional Sections**:
   - Hero/Home
   - About & Education
@@ -21,7 +15,6 @@ Modern, clean, and responsive single-page portfolio website.
   - Contact
 
 ## 📱 Browser Support
-
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
@@ -30,7 +23,6 @@ Modern, clean, and responsive single-page portfolio website.
 
 
 ## 👤 Author
-
 **Bharathi S**
 - Email: bharathi.ece2023@citchennai.net
 - LinkedIn: [bharathisenthilkumar28](https://www.linkedin.com/in/bharathisenthilkumar28)
